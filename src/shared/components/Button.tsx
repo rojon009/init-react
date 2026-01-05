@@ -1,0 +1,25 @@
+import type { ButtonHTMLAttributes, ReactNode } from "react";
+
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  children: ReactNode;
+  variant?: "primary" | "secondary" | "danger";
+  size?: "sm" | "md" | "lg";
+}
+
+export const Button = ({
+  children,
+  variant = "primary",
+  size = "md",
+  className = "",
+  ...props
+}: ButtonProps) => {
+  return (
+    <button
+      className={`btn btn-${variant} btn-${size} ${className}`}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+};
+
