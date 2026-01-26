@@ -6,9 +6,11 @@ function App() {
   return (
     <ErrorBoundary>
       <QueryProvider>
-        <Router />
+        <div className="min-h-screen bg-background max-w-2xl mx-auto">
+          <Router />
+        </div>
       </QueryProvider>
-    </ErrorBoundary>
+    </ErrorBoundary >
   );
 }
 
